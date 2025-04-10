@@ -59,6 +59,7 @@ class Timer {
     }
 
     startBtn.disabled = true;
+    dateTimePicker.disabled = true;
     
     this.timerInterval = setInterval(() => {
       const curentTime = Date.now();
@@ -67,6 +68,7 @@ class Timer {
       if (resultTime <= 0) {
         clearInterval(this.timerInterval);
         this.onTick(this.convertMs(0)); 
+        dateTimePicker.disabled = false;
         return;
       }
 
